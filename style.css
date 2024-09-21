@@ -41,8 +41,17 @@ header >ul,li{
 	list-style-type:none;
 	display:inline-block;
 } 
-header > div.more > nav{
+header > div.more > nav {
+	display: block; /* Show the nav by default on desktop */
+	position: relative;
+	background-color: transparent;
+	width: auto;
+	box-shadow: none;
+	border-radius: 0;
+	padding: 0;
 	margin-right:50px;
+  }
+header > div.more > nav{
 }
 header > ul,a{
 	color:#fff;
@@ -240,6 +249,88 @@ footer > div.buddy img{
 }
 
 
+
+
+@media screen and (max-width: 768px) {
+
+header > div.more > nav {
+    display: none; /* Initially hide the menu */
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 20px 0;
+    text-align: center; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; 
+}
+
+nav.active {
+    display: block; 
+}
+
+header > div.more > nav ul {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    padding: 0;
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+}
+
+header > div.more > nav ul li {
+    padding: 15px 0; /* Add spacing between menu items */
+}
+
+header > div.more > nav ul li a {
+    color: hsl(210, 4%, 67%); /* Lighter text color */
+    font-family: var(--font-family-one);
+    font-size: 18px; /* Adjust font size */
+    text-decoration: none;
+    font-weight: 600; /* Make the font bold */
+}
+
+header > div.more > nav ul li button {
+    background-color: hsl(51, 100%, 49%); /* Yellow background as per image */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-family: var(--font-family-one);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Adjust the hamburger icon to show */
+.hamburger {
+    cursor: pointer;
+    display: block; /* Ensure it's displayed on mobile */
+    margin-right: 20px;
+}
+
+    /* Ensure the header is properly aligned */
+    header > div.more {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    header > div.more > img#logo {
+        margin-left: 20px;
+    }
+    
+    header > div.much {
+        text-align: center;
+    }
+    
+    header > div.much > h1 {
+        font-size: 2rem;
+    }
+}
 
 
 
